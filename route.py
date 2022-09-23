@@ -27,8 +27,7 @@ class Item(MethodResource):
 class Spec(MethodResource):
     @doc(description = "question1-c", tags = ['question1'])
     def get(self):
-        spec = yaml.dump(requests.get("http://localhost:5000/json").json())
-        print(spec)
+        spec = yaml.dump(requests.get("http://localhost:5000/jsonspec").json())
         return spec
 
 class Add(MethodResource):
