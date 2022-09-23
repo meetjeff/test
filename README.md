@@ -153,7 +153,7 @@ swagger: 2.0.0
 
 ## /question2/add
 ###### -GET-
-question2
+question2  
 A function with two parameters, a and b. The return value is a+b.
 
 **Input Parameters :**
@@ -169,7 +169,7 @@ A function with two parameters, a and b. The return value is a+b.
 
 ## /question3/convert
 ###### -GET-
-question3
+question3  
 Convert a ASCII numbers string to TEXT. The text matches a regular expression, '[a-zA-Z]+'gm
 
 **Input Parameters :**
@@ -184,7 +184,7 @@ Convert a ASCII numbers string to TEXT. The text matches a regular expression, '
 
 ## /question4/sayHello
 ###### -GET-
-question4
+question4  
 Only a single instance of a program is running.
 
 **Input Parameters :**
