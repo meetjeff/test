@@ -150,3 +150,48 @@ paths:
       - question4
 swagger: 2.0.0
 ```
+
+## /question2/add
+###### -GET-
+question2
+A function with two parameters, a and b. The return value is a+b.
+
+**Input Parameters :**
+* a　　&thinsp;( float )
+* b　　&thinsp;( float )
+
+**Success Example**
+```yaml
+{
+  "sum": 28.5
+}
+```
+
+## /question3/convert
+###### -GET-
+question3
+Convert a ASCII numbers string to TEXT. The text matches a regular expression, '[a-zA-Z]+'gm
+
+**Input Parameters :**
+* ASCII_numbers　　&thinsp;( string )
+
+**Success Example**
+```yaml
+{
+  "text": "Congratulations"
+}
+```
+
+## /question4/sayHello
+###### -GET-
+question4
+Only a single instance of a program is running.
+
+**Input Parameters :**
+* name　　&thinsp;( string )
+* message　　&thinsp;( string )
+
+**Success Example**
+```yaml
+"Hi, Amos. Your message: 透過threading模組的鎖將sayHello程式碼資源鎖定，執行完成後才釋放，如此可確保function一次只給一個程序啟動"
+```
