@@ -38,5 +38,115 @@ question1-c
 
 **Success Example**
 ```yaml
-"definitions:\n  AddResponse:\n    properties:\n      sum:\n        example: 123\n        type: number\n    type: object\n  ConvertResponse:\n    properties:\n      text:\n        example: textstring\n        type: string\n    type: object\n  PostRequest:\n    properties:\n      item_name:\n        type: string\n    required:\n    - item_name\n    type: object\n  PostResponse:\n    properties:\n      result:\n        example: success\n        type: string\n    type: object\ninfo:\n  title: \"Jeff - \\u5F8C\\u7AEF\\u8003\\u8A66(Python)\"\n  version: v1\npaths:\n  /api/hello:\n    get:\n      description: question1-a\n      parameters: []\n      responses: {}\n      tags:\n      - question1\n  /api/item:\n    post:\n      description: question1-b\n      parameters:\n      - in: body\n        name: body\n        required: false\n        schema:\n          $ref: '#/definitions/PostRequest'\n      responses:\n        '200':\n          description: ''\n          schema:\n            $ref: '#/definitions/PostResponse'\n      tags:\n      - question1\n  /api/spec:\n    get:\n      description: question1-c\n      parameters: []\n      responses: {}\n      tags:\n      - question1\n  /question2/add:\n    get:\n      description: A function with two parameters, a and b. The return value is a+b.\n      parameters:\n      - in: query\n        name: a\n        required: true\n        type: number\n      - in: query\n        name: b\n        required: true\n        type: number\n      responses:\n        '200':\n          description: ''\n          schema:\n            $ref: '#/definitions/AddResponse'\n      tags:\n      - question2\n  /question3/convert:\n    get:\n      description: Convert a ASCII numbers string to TEXT. The text matches a regular\n        expression, '[a-zA-Z]+'gm\n      parameters:\n      - in: query\n        name: ASCII_numbers\n        required: true\n        type: string\n      responses:\n        '200':\n          description: ''\n          schema:\n            $ref: '#/definitions/ConvertResponse'\n      tags:\n      - question3\n  /question4/sayHello:\n    get:\n      description: Only a single instance of a program is running.\n      parameters:\n      - in: query\n        name: name\n        required: true\n        type: string\n      - in: query\n        name: message\n        required: true\n        type: string\n      responses: {}\n      tags:\n      - question4\nswagger: 2.0.0\n"
+definitions:
+  AddResponse:
+    properties:
+      sum:
+        example: 123
+        type: number
+    type: object
+  ConvertResponse:
+    properties:
+      text:
+        example: textstring
+        type: string
+    type: object
+  PostRequest:
+    properties:
+      item_name:
+        type: string
+    required:
+    - item_name
+    type: object
+  PostResponse:
+    properties:
+      result:
+        example: success
+        type: string
+    type: object
+info:
+  title: "Jeff - \u5F8C\u7AEF\u8003\u8A66(Python)"
+  version: v1
+paths:
+  /api/hello:
+    get:
+      description: question1-a
+      parameters: []
+      responses: {}
+      tags:
+      - question1
+  /api/item:
+    post:
+      description: question1-b
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/PostRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/PostResponse'
+      tags:
+      - question1
+  /api/spec:
+    get:
+      description: question1-c
+      parameters: []
+      responses: {}
+      tags:
+      - question1
+  /question2/add:
+    get:
+      description: A function with two parameters, a and b. The return value is a+b.        
+      parameters:
+      - in: query
+        name: a
+        required: true
+        type: number
+      - in: query
+        name: b
+        required: true
+        type: number
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/AddResponse'
+      tags:
+      - question2
+  /question3/convert:
+    get:
+      description: Convert a ASCII numbers string to TEXT. The text matches a regular       
+        expression, '[a-zA-Z]+'gm
+      parameters:
+      - in: query
+        name: ASCII_numbers
+        required: true
+        type: string
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ConvertResponse'
+      tags:
+      - question3
+  /question4/sayHello:
+    get:
+      description: Only a single instance of a program is running.
+      parameters:
+      - in: query
+        name: name
+        required: true
+        type: string
+      - in: query
+        name: message
+        required: true
+        type: string
+      responses: {}
+      tags:
+      - question4
+swagger: 2.0.0
 ```
